@@ -5,7 +5,7 @@ function setCookie(cookiename, cookievalue, exdays) {
     var expires = "expires="+ d.toUTCString();
     document.cookie = cookiename + "=" + cookievalue + ";" + expires + ";path=/";
 }
-function getCookie(cookiename) {
+function getCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
     var ca = decodedCookie.split(';');
@@ -48,3 +48,4 @@ $().ready(function() {
         $("#cookie-warning").show();
     }
 });
+*/
