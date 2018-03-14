@@ -55,8 +55,14 @@
 .cookie p{
     width: 555px;
     margin: 6px;
-    color: black;
+    color: aqua;
     border: 1px solid white;
     display: block;
     font-size: 14px;
+}
+button{
+    overflow: visible;
+    margin: 25px;
+    border-radius: 10px;
+    background: blue;
 }
