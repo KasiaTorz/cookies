@@ -35,26 +35,16 @@ function checkCookie() {
         let button = document.getElementById("close-cookie-warning");
         button.addEventListener('click',function (ev) {
             e.preventDefault();
+            username = prompt("Please enter your name:", "");
+            if (username != "" && username != null) {
+            document.getElementById("cookie").style.display = 'none';
+
+                setCookie("username", username, 365);
+            }
+
         })
-        username = prompt("Please enter your name:", "");
-        if (username != "" && username != null) {
-            setCookie("username", username, 365);
-        }
+
     }
 }
 
-/*
-$().ready(function() {
-    var sName = "cookiesok";
-    $("#close-cookie-warning").click(function(){
-        var oExpire = new Date();
-        oExpire.setTime((new Date()).getTime() + 3600000*24*365);
-        document.cookie = sName + "=1;expires=" + oExpire;
-        $("#cookie-warning").hide("slow");
-    });
 
-    if(document.cookie.indexOf(sName) === -1){
-        $("#cookie-warning").show();
-    }
-});
-*/
