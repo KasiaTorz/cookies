@@ -1,10 +1,14 @@
 
-function setCookie(cookiename, cookievalue, exdays) {
+document.onload = checkCookie();
+
+
+function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+ d.toUTCString();
-    document.cookie = cookiename + "=" + cookievalue + ";" + expires + ";path=/";
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
+
 function getCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
@@ -24,9 +28,14 @@ function getCookie(cname) {
 
 function checkCookie() {
     var username = getCookie("username");
+    console.log(username);
     if (username != "") {
         alert("Welcome again " + username);
     } else {
+        let button = document.getElementById("close-cookie-warning");
+        button.addEventListener('click',function (ev) {
+            e.preventDefault();
+        })
         username = prompt("Please enter your name:", "");
         if (username != "" && username != null) {
             setCookie("username", username, 365);
